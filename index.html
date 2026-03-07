@@ -4,131 +4,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aakriti Dhungel Portfolio</title>
+  <meta name="description" content="Aakriti Dhungel - Backend Laravel Developer | Portfolio & Projects">
+  <meta name="keywords" content="Laravel, PHP, Full Stack Developer, Portfolio">
+  <meta name="author" content="Aakriti Dhungel">
+  <title>Aakriti Dhungel - Full-Stack Developer</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-custom text-text-color">
+<body class="bg-gray-50 text-gray-900">
   <!-- Navbar -->
   <nav class="bg-white shadow-md fixed top-0 w-full z-30">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-    <!-- Logo -->
-    <h1 class="text-3xl font-bold text-primary">Aakriti</h1>
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html">
+        <h1 class="text-3xl font-bold text-primary">Aakriti</h1>
+      </a>
+      <ul class="hidden md:flex space-x-6 text-lg font-medium">
+        <li><a href="#home" class="nav-link hover:text-secondary transition">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-secondary transition">About</a></li>
+        <li><a href="#skills" class="nav-link hover:text-secondary transition">Skills</a></li>
+        <li><a href="#projects" class="nav-link hover:text-secondary transition">Projects</a></li>
+        <li><a href="#contact" class="nav-link hover:text-secondary transition">Contact</a></li>
+      </ul>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-6 text-lg font-medium">
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg id="menu-open" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close" class="w-6 h-6 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <ul id="menu"
+      class="hidden md:hidden absolute top-full left-0 w-full flex flex-col px-4 pb-4 space-y-2 bg-white shadow-md z-20">
       <li><a href="#home" class="nav-link hover:text-secondary transition">Home</a></li>
       <li><a href="#about" class="nav-link hover:text-secondary transition">About</a></li>
       <li><a href="#skills" class="nav-link hover:text-secondary transition">Skills</a></li>
       <li><a href="#projects" class="nav-link hover:text-secondary transition">Projects</a></li>
       <li><a href="#contact" class="nav-link hover:text-secondary transition">Contact</a></li>
     </ul>
-
-    <!-- Mobile Button -->
-    <button id="menu-btn" class="md:hidden focus:outline-none">
-      <svg id="menu-open" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg id="menu-close" class="w-6 h-6 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <ul id="menu" class="hidden md:hidden absolute top-full left-0 w-full flex flex-col px-4 pb-4 space-y-2 bg-white shadow-md z-20">
-    <li><a href="#home" class="nav-link hover:text-secondary transition">Home</a></li>
-    <li><a href="#about" class="nav-link hover:text-secondary transition">About</a></li>
-    <li><a href="#skills" class="nav-link hover:text-secondary transition">Skills</a></li>
-    <li><a href="#projects" class="nav-link hover:text-secondary transition">Projects</a></li>
-    <li><a href="#contact" class="nav-link hover:text-secondary transition">Contact</a></li>
-  </ul>
-</nav>
-
-    
-  <!-- Navbar End -->
-
+  </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 bg-white mt-16">
-    <!-- Text Content -->
-    <div class="md:w-1/2 text-center md:text-left animate__animated animate__fadeInLeft">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary">
-        <span class="text-primary"> I'm</span><br> <span class="text-secondary">Aakriti Dhungel</span>
-      </h1>
+  <section id="home"
+    class="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          Hi, I'm <span
+            class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Aakriti</span>
+        </h1>
+        <p class="text-2xl font-bold md:text-3xl lg:text-4xl mb-6 text-gray-700">
+          <span class="typed-text-output d-inline"></span>
+        </p>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+          Laravel-focused backend developer crafting robust APIs and scalable systems. Let's build something amazing!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="#contact" class="btn-primary inline-block">Get in Touch</a>
+          <a href="#projects" class="btn-secondary inline-block">View My Work</a>
+        </div>
+        <div class="flex gap-6 mt-8 text-3xl text-gray-700 pink">
 
-      <!-- Roles with Typed.js -->
-      <p class="text-2xl font-bold md:text-3xl lg:text-4xl mb-6 text-gray-700">
-        <span class="typed-text-output d-inline"></span>
-      </p>
+          <!-- GitHub -->
+          <a href="https://github.com/Aakriti-Dhungel" target="_blank" class="hover:text-black transition">
+            <i class="fab fa-github"></i>
+          </a>
 
-      <!-- Buttons -->
-      <div class="flex flex-col md:flex-row justify-center md:justify-start gap-5 mt-6">
-        <a href="assets/files/Aakriti_CV.pdf" download
-          class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-lg hover:bg-primary/90 transition animate__animated animate__pulse animate__infinite">
-          Download CV
-        </a>
-        <a href="#projects"
-          class="px-6 py-3 bg-secondary text-white font-medium rounded-lg shadow-lg hover:bg-secondary/90 transition animate__animated animate__fadeInUp animate__delay-1s">
-          View Projects
-        </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/aakritidhungel" target="_blank" class="hover:text-blue-600 transition">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <!-- Twitter / X -->
+          <a href="https://twitter.com/@AakritiCodes" target="_blank" class="hover:text-sky-500 transition">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+
+          <!-- Medium -->
+          <a href="https://medium.com/@AakritiCodes" target="_blank" class="hover:text-sky-500 transition">
+            <i class="fab fa-medium"></i>
+          </a>
+
+
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="flex justify-center">
+        <div class="relative w-64 h-64 md:w-80 md:h-80">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-30">
+          </div>
+          <img src="assets/images/profile.jpeg" alt="Aakriti Dhungel"
+            class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-2xl">
+        </div>
       </div>
     </div>
-
-    <!-- Profile Image -->
-    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center animate__animated animate__zoomIn">
-      <img src="assets/images/profile.jpeg" alt="Aakriti Dhungel"
-        class="rounded-full w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover shadow-2xl border-4 border-primary">
-    </div>
   </section>
-  <!-- Hero Section End -->
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <!-- Section Title -->
-      <h2 class="text-4xl md:text-5xl font-bold mb-10 text-primary animate__animated animate__fadeInDown">
+      <h2 data-aos="fade-down" class="text-4xl md:text-5xl font-bold mb-10 text-primary">
         About Me
       </h2>
-
-      <!-- Short Intro -->
-      <p class="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed animate__animated animate__fadeIn">
-        Hi Techies! I'm <span class="text-secondary font-semibold">Aakriti Dhungel</span>, a backend-focused
-        Laravel developer
-        with 1 year of experience. I enjoy building structured systems like task management apps, dashboards,
-        and newsletters while exploring new technologies. Currently pursuing Bachelor in Information
-        Technology(BIT), I’m eager to contribute
-        to innovative projects and grow as a developer.
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-700 text-lg md:text-xl lg:text-2xl leading-relaxed">
+        Hi! I'm <span class="text-secondary font-semibold">Aakriti Dhungel</span>, a backend-focused Laravel
+        developer with 1 year of experience. I enjoy building structured systems like task management apps, dashboards,
+        and newsletters while exploring new technologies. Currently pursuing Bachelor in Information Technology (BIT),
+        I’m eager to contribute to innovative projects and grow as a developer.
       </p>
     </div>
   </section>
 
-
-  <!-- Skills, Experience & Education Section -->
+  <!-- Skills, Experience & Education -->
   <section id="skills" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-
-      <!-- Section Title -->
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary animate__animated animate__fadeInDown">
+      <h2 data-aos="zoom-in" class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
         Skills, Experience & Education
       </h2>
 
       <!-- Skills -->
-      <div class="mb-20">
+      <div class="mb-20" data-aos="fade-up" data-aos-delay="100">
         <h3 class="text-2xl font-semibold mb-8 text-secondary text-center">Skills</h3>
 
         <div class="grid md:grid-cols-2 gap-8">
-
           <!-- PHP & Laravel -->
           <div>
             <div class="flex justify-between mb-1">
               <span>PHP & Laravel</span>
               <span>80%</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-3">
-              <div class="bg-primary h-3 rounded-full w-[0%] animate-fill" style="animation: fill80 1s forwards;"></div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full animate-fill" style="animation: fill80 1.5s forwards;"></div>
             </div>
           </div>
 
@@ -138,8 +164,8 @@
               <span>MySQL / PostgreSQL</span>
               <span>75%</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-3">
-              <div class="bg-primary h-3 rounded-full w-[0%] animate-fill" style="animation: fill75 1s forwards;"></div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full animate-fill" style="animation: fill75 1.5s forwards;"></div>
             </div>
           </div>
 
@@ -149,8 +175,8 @@
               <span>REST APIs</span>
               <span>70%</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-3">
-              <div class="bg-primary h-3 rounded-full w-[0%] animate-fill" style="animation: fill70 1s forwards;"></div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full animate-fill" style="animation: fill70 1.5s forwards;"></div>
             </div>
           </div>
 
@@ -160,90 +186,107 @@
               <span>HTML, CSS & Tailwind</span>
               <span>85%</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-3">
-              <div class="bg-primary h-3 rounded-full w-[0%] animate-fill" style="animation: fill85 1s forwards;"></div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full animate-fill" style="animation: fill85 1.5s forwards;"></div>
             </div>
           </div>
-
         </div>
       </div>
+
       <!-- Experience & Education -->
       <div class="grid md:grid-cols-2 gap-12">
 
-        <!-- Experience -->
-        <div>
-          <h3 class="text-2xl font-semibold mb-8 text-secondary">
-            Experience
-          </h3>
+        <!-- Experience Timeline -->
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-8 text-secondary text-center md:text-left">Experience</h3>
 
-          <div class="border-l-4 border-primary pl-6 space-y-8">
-
-            <div>
-              <span class="text-sm text-primary font-semibold">2024</span>
-              <h4 class="text-lg font-semibold mt-1">
+          <ol class="relative border-s-4 border-primary ms-4 md:ms-8">
+            <!-- Current Internship -->
+            <li class="mb-10 ms-5">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 ring-4 ring-white"></span>
+              <h4 class="mb-1 text-lg font-semibold text-primary flex items-center gap-3">
                 Laravel Developer Intern
+                <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">
+                  Jan 2026 – Present
+                </span>
               </h4>
-              <p class="text-gray-600">
-                Trilokya Technology (3 Months)
+              <p class="text-gray-600 font-medium">Young Minds Creation (P) Ltd · Kathmandu, Nepal</p>
+              <p class="mt-1 text-sm text-gray-500">
+                Working on Laravel applications, RESTful APIs, and backend system development.
               </p>
-            </div>
+            </li>
 
-            <div>
-              <span class="text-sm text-primary font-semibold">
-                2023 – Present
-              </span>
-              <h4 class="text-lg font-semibold mt-1">
+            <!-- Internship -->
+            <li class="mb-10 ms-5">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 ring-4 ring-white"></span>
+              <h4 class="mb-1 text-lg font-semibold text-primary flex items-center gap-3">
+                Laravel Developer Intern
+                <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">
+                  Jul 2025 – Oct 2025
+                </span>
+              </h4>
+              <p class="text-gray-600 font-medium">Trilokya Technology</p>
+              <p class="mt-1 text-sm text-gray-500">
+                Built Laravel-based web systems and worked with Git, MySQL, and MVC architecture.
+              </p>
+            </li>
+
+            <!-- Self-Learning -->
+            <li class="ms-5">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 ring-4 ring-white"></span>
+              <h4 class="mb-1 text-lg font-semibold text-primary flex items-center gap-3">
                 Self-Learning & Personal Projects
+                <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">
+                  2025 – Present
+                </span>
               </h4>
               <p class="text-gray-600">
                 Laravel MVC systems, dashboards, newsletters & APIs.
               </p>
-            </div>
-
-          </div>
+            </li>
+          </ol>
         </div>
 
-        <!-- Education -->
-        <div>
-          <h3 class="text-2xl font-semibold mb-8 text-secondary">
-            Education
-          </h3>
+        <!-- Education Timeline -->
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-semibold mb-8 text-secondary text-center md:text-left">Education</h3>
 
-          <div class="border-l-4 border-primary pl-6 space-y-8">
-
-            <div>
-              <span class="text-sm text-primary font-semibold">
-                2023 – Present
-              </span>
-              <h4 class="text-lg font-semibold mt-1">
+          <ol class="relative border-s-4 border-primary ms-4 md:ms-8">
+            <!-- BIT -->
+            <li class="mb-10 ms-5">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 ring-4 ring-white"></span>
+              <h4 class="mb-1 text-lg font-semibold text-primary flex items-center gap-3">
                 Bachelor in Information Technology
+                <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">
+                  2023 – Present
+                </span>
               </h4>
-              <p class="text-gray-600">
-                Bhaktapur Multiple Campus
-              </p>
-            </div>
+              <p class="text-gray-600">Bhaktapur Multiple Campus</p>
+            </li>
 
-            <div>
-              <span class="text-sm text-primary font-semibold">
-                Completed
-              </span>
-              <h4 class="text-lg font-semibold mt-1">
-                +2 (Science)
+            <!-- +2 -->
+            <li class="ms-5">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 ring-4 ring-white"></span>
+              <h4 class="mb-1 text-lg font-semibold text-primary flex items-center gap-3">
+                +2 (Computer Science)
+                <span class="bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full">
+                  Completed
+                </span>
               </h4>
-              <p class="text-gray-600">
-                Texas International College
-              </p>
-            </div>
-
-          </div>
-
+              <p class="text-gray-600">Texas International College</p>
+            </li>
+          </ol>
         </div>
 
       </div>
-
     </div>
 
-    <!-- Animated Skill Bars -->
+    <!-- Skill bar animations -->
     <style>
       @keyframes fill80 {
         to {
@@ -268,30 +311,43 @@
           width: 85%;
         }
       }
+
+      .animate-fill {
+        width: 0;
+      }
     </style>
   </section>
 
-
-
-  <!-- Projects section -->
-
-  <section id="projects" class="py-20">
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
+      <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-10 text-primary">My Projects</h2>
 
-      <h2 class="text-4xl font-bold text-center mb-10 text-primary">My Projects</h2>
-
-      <!-- Filter Buttons -->
       <div class="flex justify-center gap-4 mb-12">
         <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="laravel">Laravel Projects</button>
         <button class="filter-btn" data-filter="php">PHP Projects</button>
       </div>
-
-      <!-- Projects Grid -->
       <div class="grid md:grid-cols-2 gap-6">
+        <!-- News Portal -->
+        <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
+          data-aos-delay="100">
+          <img src="assets/images/projects/news-portal.png" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-primary mb-2">News Portal</h3>
+            <p class="text-gray-600 mb-4">
+              Dynamic news portal with category-based articles, admin dashboard, and user-friendly interface.
+            </p>
+            <span class="text-sm text-secondary mb-4 block">Laravel • MySQL • Blade</span>
+            <div class="flex gap-4">
+              <a href="#" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white">GitHub</a>
+              <a href="#" class="px-4 py-2 bg-secondary text-white rounded">Live Demo</a>
+            </div>
+          </div>
+        </div>
 
-        <!-- Laravel Project -->
-        <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden">
+        <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
+          data-aos-delay="100">
           <img src="https://via.placeholder.com/600x300" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold text-primary mb-2">Task Management System</h3>
@@ -299,13 +355,13 @@
             <span class="text-sm text-secondary mb-4 block">Laravel • MySQL • MVC</span>
             <div class="flex gap-4">
               <a href="#" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white">GitHub</a>
-              <a href="#" class="px-4 py-2 bg-yellow-500 text-white rounded">Live Demo</a>
+              <a href="#" class="px-4 py-2 bg-secondary text-white rounded">Live Demo</a>
             </div>
           </div>
         </div>
 
-        <!-- PHP Project -->
-        <div class="project-card php bg-white rounded-xl shadow overflow-hidden">
+        <div class="project-card php bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
+          data-aos-delay="200">
           <img src="https://via.placeholder.com/600x300" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold text-primary mb-2">Core PHP CRUD App</h3>
@@ -313,61 +369,75 @@
             <span class="text-sm text-secondary mb-4 block">PHP • MySQL</span>
             <div class="flex gap-4">
               <a href="#" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white">GitHub</a>
-              <a href="#" class="px-4 py-2 bg-yellow-500 text-white rounded">Live Demo</a>
+              <a href="#" class="px-4 py-2 bg-secondary text-white rounded">Live Demo</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-
-      <h2 class="text-3xl font-bold mb-6 text-primary text-center animate__animated animate__fadeInDown">
+      <h2 data-aos="fade-down" class="text-3xl font-bold mb-6 text-primary text-center">
         Contact
       </h2>
-      <p class="text-center text-gray-700 mb-12 animate__animated animate__fadeIn">
+      <p data-aos="fade-up" data-aos-delay="100" class="text-center text-gray-700 mb-12">
         Let's Connect and Create Something Amazing!
       </p>
 
       <div class="grid md:grid-cols-2 gap-12">
-
-        <!-- Contact Info -->
-        <div class="space-y-6 animate__animated animate__fadeInLeft">
+        <!-- Left: Info -->
+        <div class="space-y-6" data-aos="fade-right">
           <div>
             <h3 class="text-xl font-semibold text-primary mb-2">Address</h3>
             <p class="text-gray-700">Kathmandu, Nepal</p>
           </div>
           <div>
-            <h3 class="text-xl font-semibold text-primary mb-2">Email Me</h3>
+            <h3 class="text-xl font-semibold text-primary mb-2">Email</h3>
             <p class="text-gray-700">aakritidhungel01@gmail.com</p>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <form action="contact.php" method="POST" class="space-y-4 animate__animated animate__fadeInRight">
-          <input type="text" name="name" placeholder="Your Name" required
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-          <input type="email" name="email" placeholder="Your Email" required
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-          <input type="text" name="subject" placeholder="Subject" required
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-          <textarea name="message" rows="5" placeholder="Message" required
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        <form action="https://formspree.io/f/mvzwoynp" method="POST" class="space-y-4" data-aos="fade-left">
+
+          <div>
+            <label for="name" class="block mb-1 font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
+          </div>
+
+          <div>
+            <label for="email" class="block mb-1 font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
+          </div>
+
+          <div>
+            <label for="subject" class="block mb-1 font-medium text-gray-700">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
+          </div>
+
+          <div>
+            <label for="message" class="block mb-1 font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"></textarea>
+          </div>
+
+          <input type="text" name="_gotcha" style="display:none">
+
           <button type="submit"
-            class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition">
+            class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary transition">
             Send Message
           </button>
-        </form>
 
+        </form>
       </div>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="bg-gray-100 py-6 mt-12">
     <div class="max-w-6xl mx-auto px-4 text-center text-gray-700">
@@ -375,11 +445,20 @@
     </div>
   </footer>
 
-
   <script src="assets/js/script.js"></script>
-  <!-- Typed.js -->
   <script src="assets/js/typed.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      AOS.init({
+        duration: 800,
+        once: true,          // animate only once (good choice)
+        easing: 'ease-out',
+        offset: 100,         // start animation a bit earlier (helps)
+      });
+      AOS.refresh();        // ← this recalculates positions after images/fonts load
+    });
+  </script>
 </body>
 
 </html>
