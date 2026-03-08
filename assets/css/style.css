@@ -4,13 +4,18 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Poppins', sans-serif;
 }
 
 :root {
---primary-color: #111827;
---secondary-color: #6366f1;}
+  --primary-color: #111827;
+  --secondary-color: #6366f1;
+}
+
 .text-primary {
   color: var(--primary-color);
 }
@@ -96,6 +101,12 @@ h1, h2, h3, h4 {
   width: 0;
   background-color: var(--primary-color);
   transition: width 1.2s ease-in-out;
+}
+
+/* Projects*/
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Forms*/

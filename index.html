@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +14,20 @@
   <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS (CDN for speed) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Font Awesome (CDN for caching & global speed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-vvXo8iKqROGc5tXYxF0+T7Gd+qjP4o/4eL1dxr1N7jNTiFMJwWZkN8bE6fL+1yp3lGfS1oP/JjBbbgMVv2b1wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- AOS Animation (local) -->
+  <link href="assets/aos/aos.css" rel="stylesheet">
 
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
@@ -113,7 +114,7 @@
         <div class="relative w-64 h-64 md:w-80 md:h-80">
           <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-30">
           </div>
-          <img src="assets/images/profile.jpeg" alt="Aakriti Dhungel"
+          <img src="assets/images/profile.jpeg" loading="lazy" alt="Aakriti Dhungel"
             class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-2xl">
         </div>
       </div>
@@ -332,7 +333,8 @@
         <!-- News Portal -->
         <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
           data-aos-delay="100">
-          <img src="assets/images/projects/news-portal.png" class="w-full h-48 object-cover">
+          <img src="assets/images/projects/news-portal.png" alt="News Portal Screenshot"
+            class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold text-primary mb-2">News Portal</h3>
             <p class="text-gray-600 mb-4">
@@ -444,19 +446,29 @@
       © Copyright Aakriti Dhungel All Rights Reserved | Designed by Aakriti Dhungel
     </div>
   </footer>
+  <!-- Typed.js -->
+  <script src="assets/js/typed.min.js" defer></script>
 
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/typed.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- AOS JS  -->
+  <script src="assets/aos/aos.js" defer></script>
+
+  <!-- Font Awesome JS  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"
+    integrity="sha512-oS9+/rFSpz0P8e0xX2vL2F0N5/YMLU2Rl0U+DxFJhq/J6tCzlf9IV9jEj+2K7RfLh+7GXDTVhS0s1nGBi8l0Cg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+  <!--  Script -->
+  <script src="assets/js/script.js" defer></script>
+
   <script>
     window.addEventListener('load', function () {
       AOS.init({
         duration: 800,
-        once: true,          // animate only once (good choice)
+        once: true,
         easing: 'ease-out',
-        offset: 100,         // start animation a bit earlier (helps)
+        offset: 100,
       });
-      AOS.refresh();        // ← this recalculates positions after images/fonts load
+      AOS.refresh();
     });
   </script>
 </body>

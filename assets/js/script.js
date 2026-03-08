@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typed.js Effect
   new Typed(".typed-text-output", {
     strings: [
-      "PHP/Laravel Developer",
-      "Web Developer",
+      "Laravel Developer",
+      "Full-Stack Enthusiast",
+      "Problem Solver",
+      "AI/ML Enthusiast",
       "Aspiring Software Engineer",
-      "AI/ML Enthusiast"
     ],
     typeSpeed: 100,
-    backSpeed: 50,
+    backSpeed: 70,
     backDelay: 900,
     loop: true
   });
