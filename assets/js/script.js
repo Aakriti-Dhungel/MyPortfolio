@@ -73,4 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const width = fill.dataset.width || "0%";
     fill.style.width = width;
   });
+  //Year in the footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
 });
