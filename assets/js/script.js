@@ -26,6 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menuCloseIcon.classList.toggle("hidden");
   });
 
+  document.querySelectorAll("#menu .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      menuOpenIcon.classList.remove("hidden");
+      menuCloseIcon.classList.add("hidden");
+    });
+  });
+
   // Navbar Active Link on Scroll
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");

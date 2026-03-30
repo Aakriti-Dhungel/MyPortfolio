@@ -30,10 +30,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
   <!-- Navbar -->
-  <nav class="bg-white shadow-md fixed top-0 w-full z-30">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+  <nav class="bg-white shadow-md fixed top-0 w-screen max-w-full z-30">
+    <div class="container flex justify-between items-center py-3">
       <a href="index.html">
         <h1 class="text-3xl font-bold text-primary">Aakriti</h1>
       </a>
@@ -56,7 +56,7 @@
     </div>
 
     <ul id="menu"
-      class="hidden md:hidden absolute top-full left-0 w-full flex flex-col px-4 pb-4 space-y-2 bg-white shadow-md z-20">
+      class="hidden md:hidden absolute top-full left-0 right-0 flex flex-col px-4 pb-4 space-y-2 bg-white shadow-md z-20">
       <li><a href="#home" class="nav-link hover:text-secondary transition">Home</a></li>
       <li><a href="#about" class="nav-link hover:text-secondary transition">About</a></li>
       <li><a href="#skills" class="nav-link hover:text-secondary transition">Skills</a></li>
@@ -68,26 +68,31 @@
   <!-- Hero Section -->
   <section id="home"
     class="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div data-aos="fade-up">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+    <div class="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-up" class="text-center md:text-left">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Hi, I'm <span
             class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Aakriti</span>
         </h1>
         <p class="text-2xl font-bold md:text-3xl lg:text-4xl mb-6 text-gray-700">
           <span class="typed-text-output d-inline"></span>
         </p>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
           Laravel-focused backend developer crafting robust APIs and scalable systems. Let's build something amazing!
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 mb-8">
-          <a href="#contact" class="btn-primary inline-block">Get in Touch</a>
-          <a href="#projects" class="btn-secondary inline-block">View My Work</a>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8 flex-wrap justify-center md:justify-start">
+          <a href="#contact" class="btn-primary inline-block text-center">Get in Touch</a>
+          <a href="#projects" class="btn-primary inline-block text-center">View My Work</a>
+          <a href="assets/files/Aakriti_Dhungel_Resume.pdf" download
+            class="px-6 py-3 btn-secondary text-white font-medium rounded-lg hover:bg-purple-600 transition flex items-center gap-2">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+
         </div>
-        <div class="flex gap-6 mt-8 text-3xl text-gray-700 pink">
+        <div class="flex gap-6 mt-8 text-3xl text-gray-700 pink justify-center md:justify-start">
 
           <!-- GitHub -->
-          <a href="https://github.com/Aakriti-Dhungel" target="_blank" class="hover:text-black transition">
+          <a href="https://github.com/Aakriti-Dhungel" target="_blank" class="hover:text-blue-600 transition">
             <i class="fab fa-github"></i>
           </a>
 
@@ -110,8 +115,8 @@
         </div>
       </div>
 
-      <div data-aos="fade-left" class="flex justify-center">
-        <div class="relative w-64 h-64 md:w-80 md:h-80">
+      <div data-aos="fade-left" class="flex justify-center order-first md:order-last">
+        <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
           <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-30">
           </div>
           <img src="assets/images/profile.jpeg" loading="lazy" alt="Aakriti Dhungel"
@@ -123,7 +128,7 @@
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="container px-6 text-center">
       <h2 data-aos="fade-down" class="text-4xl md:text-5xl font-bold mb-10 text-primary">
         About Me
       </h2>
@@ -138,7 +143,7 @@
 
   <!-- Skills, Experience & Education -->
   <section id="skills" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container px-4">
       <h2 data-aos="zoom-in" class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
         Skills, Experience & Education
       </h2>
@@ -321,18 +326,18 @@
 
   <!-- Projects -->
   <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container px-4">
       <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-10 text-primary">My Projects</h2>
 
-      <div class="flex justify-center gap-4 mb-12">
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
         <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="laravel">Laravel Projects</button>
         <button class="filter-btn" data-filter="php">PHP Projects</button>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- Ecommerce -->
-        <!-- <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
+        <!-- Ecommerce  -->
+        <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
           data-aos-delay="100">
           <img src="assets/images/projects/ecommerce.png" alt="Multi Vendor Ecommerce Screenshot"
             class="w-full h-48 object-cover">
@@ -351,7 +356,7 @@
               <a href="#" class="px-4 py-2 bg-secondary text-white rounded">Live Demo</a>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- News Portal -->
         <div class="project-card laravel bg-white rounded-xl shadow overflow-hidden" data-aos="fade-up"
@@ -366,7 +371,8 @@
             </p>
             <span class="text-sm text-secondary mb-4 block">Laravel • MySQL • Blade</span>
             <div class="flex gap-4">
-              <a href="https://github.com/Aakriti-Dhungel/news-portal" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white" target="_blank">GitHub</a>
+              <a href="https://github.com/Aakriti-Dhungel/news-portal"
+                class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white" target="_blank">GitHub</a>
               <a href="#" class="px-4 py-2 bg-secondary text-white rounded">Live Demo</a>
             </div>
           </div>
@@ -425,7 +431,7 @@
 
   <!-- Contact -->
   <section id="contact" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container px-4">
       <h2 data-aos="fade-down" class="text-3xl font-bold mb-6 text-primary text-center">
         Contact
       </h2>
@@ -492,7 +498,7 @@
 
   <!-- Footer -->
   <footer class="bg-gray-100 py-6 mt-12">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-700">
+    <div class="container  px-4 text-center text-gray-700">
       <p class="text-sm">
         &copy; <span id="year"></span> Aakriti Dhungel. All Rights Reserved.
       </p>
@@ -502,11 +508,11 @@
   <!-- Typed.js -->
   <script src="assets/js/typed.min.js" defer></script>
 
-  <!-- AOS JS  -->
-  <script src="assets/aos/aos.js" defer></script>
-
   <!--  Script -->
   <script src="assets/js/script.js" defer></script>
+
+  <!-- AOS JS  -->
+  <script src="assets/aos/aos.js" defer></script>
 
   <script>
     window.addEventListener('load', function () {

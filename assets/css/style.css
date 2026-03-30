@@ -1,4 +1,4 @@
-/* Custom Colors*/
+/* Custom Colors */
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
@@ -16,6 +16,17 @@ h4 {
   --secondary-color: #6366f1;
 }
 
+/* Container — padded on small screens, capped on large */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
 .text-primary {
   color: var(--primary-color);
 }
@@ -24,7 +35,7 @@ h4 {
   color: var(--secondary-color);
 }
 
-/* Background Colors*/
+/* Background Colors */
 .bg-primary {
   background-color: var(--primary-color);
   color: white;
@@ -35,7 +46,7 @@ h4 {
   color: white;
 }
 
-/* Buttons*/
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   padding: 0.5rem 1.5rem;
@@ -64,13 +75,13 @@ h4 {
   background-color: #e6a10f;
 }
 
-/* Card Hover Animation*/
+/* Card Hover Animation */
 .card-hover:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
 }
 
-/* Project Filter Buttons*/
+/* Project Filter Buttons */
 .filter-btn {
   padding: 0.5rem 1.5rem;
   border: 2px solid var(--primary-color);
@@ -79,6 +90,7 @@ h4 {
   color: var(--primary-color);
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .filter-btn:hover,
@@ -87,11 +99,10 @@ h4 {
   color: white;
 }
 
-/* Skill Bars*/
+/* Skill Bars */
 .skill-bar {
   height: 0.75rem;
   background-color: #e5e7eb;
-  /* Tailwind gray-*/
   border-radius: 9999px;
   overflow: hidden;
 }
@@ -103,13 +114,17 @@ h4 {
   transition: width 1.2s ease-in-out;
 }
 
-/* Projects*/
+/* Projects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Forms*/
+/* Forms */
 input,
 textarea {
   border: 1px solid #d1d5db;
@@ -125,7 +140,7 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.2);
 }
 
-/* Footer*/
+/* Footer */
 footer {
   background-color: #f3f4f6;
   color: #6b7280;
@@ -133,12 +148,69 @@ footer {
   padding: 1.5rem 0;
 }
 
-/* Optional: Media Queries*/
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
+/* ============================
+   Responsive Media Queries
+   ============================ */
+
+/* Mobile — up to 640px */
+@media (max-width: 640px) {
+  /* Hero heading */
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+
+  /* Make hero image smaller on very small screens */
+  #home .relative.w-64 {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  /* Center hero text area on mobile */
+  #home [data-aos="fade-up"] {
+    text-align: center;
+  }
+
+  #home .flex.gap-6 {
+    justify-content: center;
+  }
+
+  /* Filter buttons wrap nicely */
+  #projects .flex.justify-center.gap-4 {
+    flex-wrap: wrap;
+  }
+
+  /* Timeline: date badge wraps to next line on tiny screens */
+  .experience-title,
+  h4.flex.items-center.gap-3 {
+    flex-wrap: wrap;
+  }
+
+  /* About text size */
+  #about p {
+    font-size: 1rem;
   }
 }
 
-/* Tailwind Import*/
-@import "tailwindcss";
+/* Tablet — up to 768px */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  /* Filter buttons wrap */
+  #projects .flex.justify-center.gap-4 {
+    flex-wrap: wrap;
+  }
+
+  /* Timeline date badges: allow wrapping */
+  h4.flex.items-center.gap-3 {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
